@@ -118,12 +118,12 @@
   <main class="main">
 
     <!-- Hero Section -->
-    <section id="hero" class="hero section">
+   <section id="hero" class="hero section">
 
         <div class="container" id="login">
         <div class="row gy-4">
           <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out">
-            <h1 class="" >Selamat Datang Sobat UMKM</h1>
+            <h1 class="" >Selamat Datang FastFesta</h1>
             <p class="">Tidak hanya event, ini adalah pengalaman</p>
             <div class="d-flex">
               <a href="#about" class="btn-get-started">Get Started</a>
@@ -131,12 +131,12 @@
             </div>
           </div>
           <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="200">
-            <img src="{{asset('assets/img/animasi2.png')}}" class="img-fluid animated" alt="">
+            <img src="{{asset('assets/img/Animasi7.png')}}" class="img-fluid animated" alt="">
           </div>
         </div>
       </div>
 
-    </section><!-- /Hero Section -->
+    </section>
 
     <!-- Clients Section -->
     <section id="clients" class="clients section">
@@ -210,21 +210,19 @@
         <div class="row gy-4">
 
           <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
-            <p>
-              UMKM merupakan singkatan dari Usaha Mikro, Kecil, dan Menengah.
-              Pada dasarnya, UMKM adalah arti usaha atau bisnis yang dilakukan oleh individu, kelompok, badan usaha kecil, maupun rumah tangga.
-              Indonesia sebagai negara berkembang menjadikan UMKM sebagai pondasi utama sektor perekonomian masyarakat,
-              hal ini dilakukan untuk mendorong kemampuan kemandirian dalam berkembang pada masyarakat khsusunya dalam sektor ekonomi.
-              UMKM yang ada di Indonesia beragam dan memiliki khasnya masing-masing.
-              Berikut ini adalah beberapa contoh bidang dalam UMKM:
+            <p>FastFesta merupakan Website yang menyediakan sebuah event dari berbagai macam sumber.
+               FastFest juga merupakan singkatan dari Fast Festival yang memiliki arti Cepat Festival atau Festival Cepat.
+               Dengen demikian, kami memperomosikan sebuah event yang bertema kewirausahaan yang diadakan
+                oleh perusahaan atau mitra usaha yang mentargetkan para UMKM.
+            </p>
           </div>
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <p>UMKM juga berperan dalam perluasan kesempatan kerja.
-              Seiring dengan terus meningkatnya angka penduduk di Indonesia,
-              UMKM menjadi salah satu solusi dalam meningkatkan kualitas individu.
-              Selain dapat menyerap tenaga kerja,
-              UMKM bisa menjadi pendorong bagi masyarakat lain untuk ikut bersaing sehingga menciptakan usaha dan peluang baru bagi masyarakat lain. </p>
+            <p> UMKM merupakan singkatan dari Usaha Mikro, Kecil, dan Menengah.
+              Pada dasarnya, UMKM adalah arti usaha atau bisnis yang dilakukan oleh individu, kelompok, badan usaha kecil, maupun rumah tangga.
+              Indonesia sebagai negara berkembang menjadikan UMKM sebagai pondasi utama sektor perekonomian masyarakat,
+              hal ini dilakukan untuk mendorong kemampuan kemandirian dalam berkembang pada masyarakat khsusunya dalam sektor ekonomi.
+            </p>
             <a href="https://www.gramedia.com/literasi/umkm/" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
           </div>
 
@@ -232,8 +230,7 @@
 
       </div>
 
-    </section><!-- /About Section -->
-
+    </section>
     <!-- Why Us Section -->
     <section id="why-us" class="section why-us" data-builder="section">
 
@@ -326,60 +323,59 @@
 
 
     </section><!-- /Call To Action Section -->
+</div>
+<section id="portfolio" class="portfolio section">
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Gallery</h2>
+        <p></p>
+    </div><!-- End Section Title -->
 
-    <section id="portfolio" class="portfolio section">
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-            <h2>Gallery</h2>
-            <p></p>
-        </div><!-- End Section Title -->
+    <div class="container">
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+            <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+                <li data-filter="*" class="filter-active">All</li>
+            </ul><!-- End Portfolio Filters -->
 
-        <div class="container">
-            <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-                <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-                    <li data-filter="*" class="filter-active">All</li>
-                    <li data-filter=".filter-2024">2024</li>
-                    <li data-filter=".filter-2023">2023</li>
-                    <li data-filter=".filter-2022">2022</li>
-                </ul><!-- End Portfolio Filters -->
-
-                <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-                    @foreach($events as $event)
-                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-{{ date('Y', strtotime($event->created_at)) }}">
-                            <img src="{{ asset('storage/' . $event->image) }}" class="img-fluid" alt="" style="width: 100%; height: 200px; object-fit: cover;" data-bs-toggle="modal" data-bs-target="#imageModal{{ $event->id }}">
-                            <div class="portfolio-info">
-                                <h5>{{ $event->title }}</h5>
-                                <p>More Details:</p>
-                                <a href="{{ asset('storage/' . $event->image) }}" title="{{ $event->title }}" data-gallery="portfolio-gallery-{{ date('Y', strtotime($event->created_at)) }}" class="glightbox preview-link"></a>
-                                <a href="#" target="_blank" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+                @foreach($events as $event)
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-{{ date('Y', strtotime($event->created_at)) }}">
+                        <div class="card">
+                            <img src="{{ asset('storage/' . $event->image) }}" class="card-img-top" alt="{{ $event->title }}" style="height: 200px; object-fit: cover;" data-bs-toggle="modal" data-bs-target="#imageModal{{ $event->id }}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $event->title }}</h5>
+                                <p class="card-text">More Details:</p>
+                                <!-- Replace the anchor tag with a button to trigger modal -->
+                                <button type="button" class="btn btn-primary details-link" data-bs-toggle="modal" data-bs-target="#imageModal{{ $event->id }}"><i class="bi bi-link-45deg"></i></button>
                             </div>
-                        </div><!-- End Portfolio Item -->
+                        </div>
+                    </div><!-- End Portfolio Item -->
 
-                        <div class="modal fade" id="imageModal{{ $event->id }}" tabindex="-1" aria-labelledby="imageModalLabel{{ $event->id }}" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered modal-xl">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="imageModalLabel{{ $event->id }}">{{ $event->title }}</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <img src="{{ asset('storage/' . $event->image) }}" class="img-fluid" alt="{{ $event->title }}">
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>{{ $event->description }}</p>
-                                            </div>
+                    <div class="modal fade" id="imageModal{{ $event->id }}" tabindex="-1" aria-labelledby="imageModalLabel{{ $event->id }}" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-xl">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="imageModalLabel{{ $event->id }}">{{ $event->title }}</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <img src="{{ asset('storage/' . $event->image) }}" class="img-fluid" alt="{{ $event->title }}">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>{{ $event->description }}</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div><!-- End Modal -->
-                    @endforeach
-                </div><!-- End Portfolio Container -->
-            </div>
+                        </div>
+                    </div><!-- End Modal -->
+                @endforeach
+            </div><!-- End Portfolio Container -->
         </div>
-    </section><!-- /Portfolio Section -->
+    </div>
+  </section>
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials section">

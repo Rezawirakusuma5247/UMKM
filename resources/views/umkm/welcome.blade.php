@@ -3,19 +3,22 @@
 @section('content')
 <main class="main">
     <!-- Hero Section -->
-    <section id="hero" class="hero section">
-        <div class="container" id="login">
-            <div class="row gy-4">
-                <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out">
-                    <h1>Selamat Datang {{ auth()->user()->name }}</h1>
-                    <p>Tidak hanya event, ini adalah pengalaman</p>
-                </div>
-                <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="200">
-                    <img src="{{ asset('assets/img/animasi2.png') }}" class="img-fluid animated" alt="">
+        <!-- Hero Section -->
+        <section id="hero" class="hero section">
+            <div class="container" id="login">
+                <div class="row gy-4">
+                    <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-start" data-aos="zoom-out">
+                        <h1>Welcome, {{ auth()->user()->name }} !</h1>
+                        <p>More Experience! More Money!</p>
+                        <a href="https://www.gramedia.com/literasi/umkm/" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                    </div>
+                    <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="200">
+                        <img src="{{ asset('assets/img/Animasi6.png') }}" class="img-fluid animated" alt="">
+                    </div>
                 </div>
             </div>
-        </div>
-    </section><!-- /Hero Section -->
+        </section><!-- /Hero Section -->
+
 
     <!-- Gallery Section -->
     <section id="portfolio" class="portfolio section">
@@ -96,7 +99,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact section">
