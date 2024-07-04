@@ -111,8 +111,7 @@
     </div><!-- End Section Title -->
 
     <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="swiper">
+        <div class="swiper-container">
             <div class="swiper-wrapper">
                 @foreach($ratings as $rating)
                 <div class="swiper-slide">
@@ -120,8 +119,7 @@
                         <!-- Adjust image source and other details as per your requirement -->
                         <img src="{{ asset('assets/img/testimonials/default.jpg') }}" class="testimonial-img" alt="">
                         <h3>{{ $rating->name }}</h3>
-                        <h4>{{ $rating->position }}</h4>
-                        <!-- Adjust stars based on rating -->
+                        <!-- Display rating dynamically -->
                         <div class="stars">
                             @for ($i = 1; $i <= $rating->rating; $i++)
                             <i class="bi bi-star-fill"></i>
@@ -133,15 +131,35 @@
                             <i class="bi bi-quote quote-icon-right"></i>
                         </p>
                     </div>
-                </div><!-- End testimonial item -->
+                </div><!-- End swiper-slide -->
                 @endforeach
-            </div>
+            </div><!-- End swiper-wrapper -->
+            <!-- Add pagination if needed -->
             <div class="swiper-pagination"></div>
-        </div>
+            <!-- Add navigation buttons if needed -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div><!-- End swiper-container -->
+    </div><!-- End container -->
+</section><!-- End testimonials section -->
 
-    </div>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+</script>
 
-</section><!-- /Testimonials Section -->
+
 
 
 <section id="rate-us-section" class="bg-dark text-white">
