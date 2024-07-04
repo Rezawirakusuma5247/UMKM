@@ -25,6 +25,7 @@
                     <thead>
                         <tr>
                             <th>ID</th>
+                            <th>Event Name</th>
                             <th>Name</th>
                             <th>UMKM</th>
                             <th>Number</th>
@@ -34,6 +35,7 @@
                         @foreach($eventRegistrations as $registration)
                         <tr>
                             <td>{{ $registration->id }}</td>
+                            <td>{{ $eventRegistrations->first()->event->title }}</td>
                             <td>{{ $registration->name }}</td>
                             <td>{{ $registration->umkm }}</td>
                             <td>{{ $registration->number }}</td>
@@ -42,6 +44,15 @@
                     </tbody>
                 </table>
             @endforeach
+
+            <div class="mb-3">
+                <a href="{{ route('regis.registrations.export') }}" class="btn btn-success">Export to Excel</a>
+                <form action="{{ route('regis.registrations.import') }}" method="POST" enctype="multipart/form-data" style="display:inline-block;">
+                    @csrf
+                    <input type="file" name="file" required>
+                    <button type="submit" class="btn btn-primary">Import from Excel</button>
+                </form>
+            </div>
 
         </div>
     </section>

@@ -84,10 +84,10 @@
                     <div class="col-lg-6">
                       <div class="card card-primary card-outline mb-3">
                         <div class="card-header font-weight-bold">
-                          <h5 class=" font-weight-bold">???</h5>
+                          <h5 class=" font-weight-bold">Data Rate</h5>
                         </div>
                         <div class="card-body">
-                          {{--  <a href="{{ route('lina.contact-us.index') }}" class="btn btn-block btn-primary col-3 mx-auto">Check!</a>  --}}
+                          <a href="{{ route('rate.index') }}" class="btn btn-block btn-primary col-3 mx-auto">Check!</a>
                         </div>
                       </div>
                     </div>

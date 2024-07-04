@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Event UMKM</title>
+  <title>FastFesta</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -99,7 +99,7 @@
 
       <a href="index.html" class="logo d-flex align-items-center me-auto">
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">Event UMKM</h1>
+        <h1 class="sitename">FastFesta</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
@@ -461,8 +461,6 @@
       </div>
 
     </section><!-- /Testimonials Section -->
-  </section><!-- /Why Us Section -->
-
 
   <!-- Services Section -->
   <section id="services" class="services section">

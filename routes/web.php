@@ -8,6 +8,7 @@ use App\Http\Controllers\UmkmController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\RateUsController;
 use App\Http\Controllers\RegistrationController;
 /*
 |--------------------------------------------------------------------------
@@ -49,7 +50,7 @@ Route::delete('/delete/{id}', [EventController::class, 'delete'])->name('delete'
 });
 
 Route::group(['prefix' => 'apa','middleware' => ['auth'],'as' => 'apa.'], function(){
-    Route::get('/Home', [UmkmController::class,'welcome'])->name('welcome');
+    Route::get('/Home', [UmkmController::class,'dashboard'])->name('dashboard');
     Route::get('/Sent',[UmkmController::class,'thanks'])->name('thanks');
 });
 
@@ -60,6 +61,9 @@ Route::group(['prefix' => 'regis','middleware' => ['auth'],'as' => 'regis.'], fu
     Route::get('/registrations/{id}/approve', [RegistrationController::class, 'approve'])->name('approve');
     Route::get('/registrations/list', [RegistrationController::class, 'list'])->name('regis.list');
     Route::delete('/delete/{id}', [RegistrationController::class, 'delete'])->name('delete');
+
+    Route::get('registrations/export', [RegistrationController::class, 'export'])->name('registrations.export');
+Route::post('registrations/import', [RegistrationController::class, 'import'])->name('registrations.import');
 });
 
 Route::group(['prefix' => 'umkm','middleware' => ['auth'],'as' => 'umkm.'], function(){
@@ -74,6 +78,13 @@ Route::group(['prefix' => 'lina','middleware' => ['auth'],'as' => 'lina.'], func
     Route::get('/contact-us/create', [ContactUsController::class, 'create'])->name('contact-us.create');
     Route::post('/contact-us/store', [ContactUsController::class, 'store'])->name('contact-us.store');
     Route::delete('/contact-us/{id}/delete', [ContactUsController::class, 'destroy'])->name('contact-us.destroy');
+});
+
+Route::group(['prefix' => 'rate','middleware' => ['auth'],'as' => 'rate.'], function(){
+    Route::get('/admin/rate', [RateUsController::class, 'index'])->name('index');
+    Route::get('/rate/create', [RateUsController::class, 'create'])->name('create');
+    Route::post('/rate/store', [RateUsController::class, 'store'])->name('store');
+    Route::delete('/rate/{id}/delete', [RateUsController::class, 'delete'])->name('delete');
 });
 
 

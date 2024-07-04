@@ -3,21 +3,21 @@
 @section('content')
 <main class="main">
     <!-- Hero Section -->
-        <!-- Hero Section -->
-        <section id="hero" class="hero section">
-            <div class="container" id="login">
-                <div class="row gy-4">
-                    <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-start" data-aos="zoom-out">
-                        <h1>Welcome, {{ auth()->user()->name }} !</h1>
-                        <p>More Experience! More Money!</p>
-                        <a href="https://www.gramedia.com/literasi/umkm/" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
-                    </div>
-                    <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="200">
-                        <img src="{{ asset('assets/img/Animasi6.png') }}" class="img-fluid animated" alt="">
-                    </div>
+    <section id="hero" class="hero section">
+        <div class="container" id="login">
+            <div class="row gy-4">
+                <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-start" data-aos="zoom-out">
+                    <h1>Welcome, {{ auth()->user()->name }}!</h1>
+                    <p>More Experience! More Money!</p>
+                    <a href="https://www.gramedia.com/literasi/umkm/" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="200">
+                    <img src="{{ asset('assets/img/Animasi6.png') }}" class="img-fluid animated" alt="">
                 </div>
             </div>
-        </section><!-- /Hero Section -->
+        </div>
+    </section><!-- /Hero Section -->
+
 
 
     <!-- Gallery Section -->
@@ -101,6 +101,60 @@
         </div>
     </section>
 
+
+
+
+<section id="testimonials" class="testimonials section">
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Rating</h2>
+        <p>Other User rating</p>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                @foreach($ratings as $rating)
+                <div class="swiper-slide">
+                    <div class="testimonial-item">
+                        <!-- Adjust image source and other details as per your requirement -->
+                        <img src="{{ asset('assets/img/testimonials/default.jpg') }}" class="testimonial-img" alt="">
+                        <h3>{{ $rating->name }}</h3>
+                        <h4>{{ $rating->position }}</h4>
+                        <!-- Adjust stars based on rating -->
+                        <div class="stars">
+                            @for ($i = 1; $i <= $rating->rating; $i++)
+                            <i class="bi bi-star-fill"></i>
+                            @endfor
+                        </div>
+                        <p>
+                            <i class="bi bi-quote quote-icon-left"></i>
+                            <span>{{ $rating->message }}</span>
+                            <i class="bi bi-quote quote-icon-right"></i>
+                        </p>
+                    </div>
+                </div><!-- End testimonial item -->
+                @endforeach
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+    </div>
+
+</section><!-- /Testimonials Section -->
+
+
+<section id="rate-us-section" class="bg-dark text-white">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-6 mx-auto text-center">
+                <h2 class="mb-4">Rate Us</h2>
+                <a href="{{ route('rate.create') }}" class=" col-lg-12 btn btn-light btn-lg">Rate Us</a>
+            </div>
+        </div>
+    </div>
+
+</section>
     <!-- Contact Section -->
     <section id="contact" class="contact section">
       <div class="container section-title" data-aos="fade-up">

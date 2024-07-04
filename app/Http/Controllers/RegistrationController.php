@@ -6,6 +6,9 @@ use App\Models\Event;
 use App\Models\Registration;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Exports\RegistrationsExport;
+use App\Imports\RegistrationsImport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class RegistrationController extends Controller
 {
@@ -75,6 +78,21 @@ class RegistrationController extends Controller
             $registration->delete();
         }
         return redirect()->route('regis.regis.index')->with('success', 'Registration deleted successfully.');
+    }
+    public function export()
+    {
+        return Excel::download(new RegistrationsExport, 'approved_registrations.xlsx');
+    }
+
+    public function import(Request $request)
+    {
+        $request->validate([
+            'file' => 'required|mimes:xls,xlsx',
+        ]);
+
+        Excel::import(new RegistrationsImport, $request->file('file'));
+
+        return redirect()->route('regis.regis.list')->with('success', 'Registrations imported successfully.');
     }
 }
 

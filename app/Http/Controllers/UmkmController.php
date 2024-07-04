@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\Event;
 use Illuminate\Http\Request;
+use App\Models\RateUs;
 
 class UmkmController extends Controller
 {
-    public function welcome()
+    public function dashboard()
     {
         $events = Event::with('approvedRegistrations')->get();
-        return view('umkm.welcome', compact('events'));
+        $ratings = RateUs::latest()->get();
+        return view('umkm.dashboard', compact('events', 'ratings'));
     }
 
     public function thanks()

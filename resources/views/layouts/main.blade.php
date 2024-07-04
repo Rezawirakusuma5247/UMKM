@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Event UMKM</title>
+  <title>FastFesta</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
@@ -56,7 +56,7 @@
                     @can('admin')
                     <li><a href="{{ route('admin.dashboard') }}" class="">Admin</a></li>
                     @endcan
-                    <li><a href="{{ route('apa.welcome') }}" class="">Home</a></li>
+                    <li><a href="{{ route('apa.dashboard') }}" class="">Home</a></li>
                     <li><a href="{{ route('logout') }}">Log Out</a></li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
