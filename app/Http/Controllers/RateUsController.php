@@ -24,7 +24,7 @@ class RateUsController extends Controller
         $request->validate([
             'name' => 'required',
             'rating' => 'required|integer|between:1,5',
-            'message' => 'required',
+            'message' => 'nullable',
         ]);
 
         $rate = RateUs::create($request->all());

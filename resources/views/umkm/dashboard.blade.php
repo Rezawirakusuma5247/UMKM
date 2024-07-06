@@ -1,12 +1,13 @@
 @extends('layouts.main')
 
 @section('content')
+
 <main class="main">
     <!-- Hero Section -->
     <section id="hero" class="hero section">
         <div class="container" id="login">
             <div class="row gy-4">
-                <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-start" data-aos="zoom-out">
+                <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out">
                     <h1>Welcome, {{ auth()->user()->name }}!</h1>
                     <p>More Experience! More Money!</p>
                     <a href="https://www.gramedia.com/literasi/umkm/" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
@@ -101,9 +102,6 @@
         </div>
     </section>
 
-
-
-
 <section id="testimonials" class="testimonials section">
     <div class="container section-title" data-aos="fade-up">
         <h2>Rating</h2>
@@ -143,23 +141,22 @@
     </div><!-- End container -->
 </section><!-- End testimonials section -->
 
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script>
-    var swiper = new Swiper('.swiper-container', {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
+    document.addEventListener('DOMContentLoaded', function () {
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
     });
 </script>
-
-
 
 
 <section id="rate-us-section" class="bg-dark text-white">

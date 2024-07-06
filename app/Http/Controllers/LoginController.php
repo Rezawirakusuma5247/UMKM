@@ -27,7 +27,7 @@ class LoginController extends Controller
         ];
 
         if(Auth::attempt($data)){
-            return redirect()->route('apa.welcome');
+            return redirect()->route('apa.dashboard');
         }else{
             return redirect()->route('login')->with('failed','Email atau Password salah');
         }

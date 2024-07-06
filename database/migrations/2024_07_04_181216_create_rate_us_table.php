@@ -12,7 +12,7 @@ class CreateRateUsTable extends Migration
             $table->id();
             $table->string('name');
             $table->integer('rating');
-            $table->text('message');
+            $table->text('message')->nullable();
             $table->timestamps();
         });
     }
