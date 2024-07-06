@@ -22,4 +22,10 @@ public function approvedRegistrations()
     return $this->hasMany(Registration::class)->where('approved', true);
 }
 
+public function category()
+{
+    return $this->belongsTo(Category::class);
+}
+
+
 }

@@ -30,6 +30,15 @@
                     <label for="description">Description</label>
                     <textarea name="description" class="form-control" id="description" rows="4" required>{{ $event->description }}</textarea>
                 </div>
+                <div class="form-group mb-3">
+                    <label for="category">Category</label>
+                    <select name="category_id" id="category" class="form-control" required>
+                        @foreach($categories as $category)
+                            <option value="{{ $category->id }}" {{ isset($event) && $event->category_id == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                
                 <div class="form-group mt-3">
                     <label for="image">Image</label>
                     <input type="file" name="image" class="form-control-file" id="image">

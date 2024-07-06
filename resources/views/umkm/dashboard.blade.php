@@ -2,15 +2,15 @@
 
 @section('content')
 
-<main class="main">
+<main class="main ">
     <!-- Hero Section -->
-    <section id="hero" class="hero section">
+    <section id="hero" class="hero section ">
         <div class="container" id="login">
             <div class="row gy-4">
                 <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out">
                     <h1>Welcome, {{ auth()->user()->name }}!</h1>
                     <p>More Experience! More Money!</p>
-                    <a href="https://www.gramedia.com/literasi/umkm/" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                    <a href="#portfolio" class="btn btn-light col-lg-3 p-auto font-bold rounded" style="color: darkblue">Get Started</a>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="200">
                     <img src="{{ asset('assets/img/Animasi6.png') }}" class="img-fluid animated" alt="">
@@ -24,22 +24,22 @@
     <!-- Gallery Section -->
     <section id="portfolio" class="portfolio section">
         <div class="container section-title" data-aos="fade-up">
-            <h2 id="gallery" class="mt-3">Event Gallery</h2>
+            <h2 id="gallery" class="mt-3">Event</h2>
         </div>
 
         <div class="container mt-5">
-            <div class="row">
-                <div class="col-md-6">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="row col-10 mx-auto">
+                <div class="col-md-5">
+                    <div id="carouselExampleIndicators" class="carousel slide " data-bs-ride="carousel">
                         <div class="carousel-indicators">
                             @foreach($events as $index => $event)
                                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ $index }}" class="{{ $index == 0 ? 'active' : '' }}" aria-label="Slide {{ $index + 1 }}"></button>
                             @endforeach
                         </div>
-                        <div class="carousel-inner">
+                        <div class="carousel-inner text-dark">
                             @foreach($events as $index => $event)
                                 <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
-                                    <img src="{{ Storage::url($event->image) }}" class="d-block w-100 carousel-image" alt="{{ $event->title }}">
+                                    <img src="{{ Storage::url($event->image) }}" class="d-block mx-auto carousel-image" alt="{{ $event->title }}">
                                 </div>
                             @endforeach
                         </div>
@@ -53,7 +53,7 @@
                         </button>
                     </div>
                 </div>
-                <div class="col-md-6 p-3">
+                <div class="col-md-5 p-3">
                     @foreach($events as $index => $event)
                         <div class="slide-description d-flex flex-column justify-content-between {{ $index == 0 ? 'active' : 'd-none' }}" id="slide-description-{{ $index }}">
                             <h3 class="mt-3">{{ $event->title }}</h3>
@@ -100,7 +100,18 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>
+
+    
+
+    <style>
+        .carousel-image {
+          max-width: 100%;
+          max-height: 600px; /* Adjust as needed */
+          object-fit: contain;
+        }
+      </style>
+      
 
 <section id="testimonials" class="testimonials section">
     <div class="container section-title" data-aos="fade-up">
@@ -115,7 +126,7 @@
                 <div class="swiper-slide">
                     <div class="testimonial-item">
                         <!-- Adjust image source and other details as per your requirement -->
-                        <img src="{{ asset('assets/img/testimonials/default.jpg') }}" class="testimonial-img" alt="">
+                        <img src="{{asset('assets/img/profile.png')}}" class="testimonial-img" alt="">
                         <h3>{{ $rating->name }}</h3>
                         <!-- Display rating dynamically -->
                         <div class="stars">
@@ -158,40 +169,36 @@
     });
 </script>
 
-
-<section id="rate-us-section" class="bg-dark text-white">
-    <div class="container py-5">
-        <div class="row">
-            <div class="col-lg-6 mx-auto text-center">
-                <h2 class="mb-4">Rate Us</h2>
-                <a href="{{ route('rate.create') }}" class=" col-lg-12 btn btn-light btn-lg">Rate Us</a>
-            </div>
-        </div>
-    </div>
-
 </section>
     <!-- Contact Section -->
-    <section id="contact" class="contact section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Contact Us</h2>
-        <p></p>
-      </div>
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4 justify-content-center">
-          <div class="col-lg-7">
-            <div class="row gy-4">
-              <div class="col-md-15">
-                <div class="col-md-12 text-center">
-                  <a href={{ route('lina.contact-us.create') }} class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-                    <button type="submit">Send Messages</button>
-                  </a>
-                </div>
-              </div>
+    <!-- Rate Section -->
+<!-- Rate and Contact Section -->
+<section id="rate-contact" class="contact section">
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Rate Us & Contact Us</h2>
+      <p>Give us your feedback or get in touch with us</p>
+    </div>
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="row gy-4 justify-content-center">
+        <div class="col-lg-7">
+          <div class="row gy-4">
+            <div class="col-md-6 text-center">
+              <a href="{{ route('rate.create') }}" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+                <button type="submit">Rate Us Now</button>
+              </a>
+            </div>
+            <div class="col-md-6 text-center">
+              <a href="{{ route('lina.contact-us.create') }}" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+                <button type="submit">Contact Us Now</button>
+              </a>
             </div>
           </div>
         </div>
       </div>
-    </section><!-- /Contact Section -->
+    </div>
+  </section><!-- /Rate and Contact Section -->
+  
+  
 </main>
 
 <style>

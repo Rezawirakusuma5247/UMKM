@@ -29,6 +29,14 @@
                     <textarea class="form-control" id="description" name="description" rows="5" required></textarea>
                 </div>
                 <div class="form-group mb-3">
+                  <label for="category">Category</label>
+                  <select name="category_id" id="category" class="form-control" required>
+                      @foreach($categories as $category)
+                          <option value="{{ $category->id }}" {{ isset($event) && $event->category_id == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
+                      @endforeach
+                  </select>
+              </div>              
+                <div class="form-group mb-3">
                     <label for="image">Image</label>
                     <input type="file" class="form-control" id="image" name="image" required>
                 </div>
