@@ -20,12 +20,17 @@
     </section><!-- /Hero Section -->
 
 
-
     <!-- Gallery Section -->
-    <section id="portfolio" class="portfolio section">
+    <section id="portfolio" class="portfolio section mt-5">
         <div class="container section-title" data-aos="fade-up">
             <h2 id="gallery" class="mt-3">Event</h2>
         </div>
+        <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">All</li>
+            @foreach($categories as $category)
+                <li data-filter=".category-{{ $category->id }}">{{ $category->name }}</li>
+            @endforeach
+        </ul>
 
         <div class="container mt-5">
             <div class="row col-10 mx-auto">
@@ -102,7 +107,7 @@
         </div>
     </section>
 
-    
+
 
     <style>
         .carousel-image {
@@ -111,7 +116,25 @@
           object-fit: contain;
         }
       </style>
-      
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Isotope
+            var $grid = $('.portfolio-container').isotope({
+                itemSelector: '.portfolio-item',
+                layoutMode: 'fitRows'
+            });
+
+            // Filter items on button click
+            $('.portfolio-filters li').on('click', function() {
+                $('.portfolio-filters li').removeClass('filter-active');
+                $(this).addClass('filter-active');
+
+                var filterValue = $(this).attr('data-filter');
+                $grid.isotope({ filter: filterValue });
+            });
+        });
+    </script>
+
 
 <section id="testimonials" class="testimonials section">
     <div class="container section-title" data-aos="fade-up">
@@ -167,7 +190,9 @@
             },
         });
     });
+
 </script>
+
 
 </section>
     <!-- Contact Section -->
@@ -197,8 +222,8 @@
       </div>
     </div>
   </section><!-- /Rate and Contact Section -->
-  
-  
+
+
 </main>
 
 <style>

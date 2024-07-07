@@ -241,9 +241,9 @@
           <div class="col-lg-7 d-flex flex-column justify-content-center order-2 order-lg-1">
 
             <div class="content px-xl-5" data-aos="fade-up" data-aos-delay="100">
-              <h3 class=""><span class="">Contoh </span><strong>UMKM Yang ada di Indonesia</strong></h3>
+              <h3 class=""><span class="">Contoh </span><strong>Festival Yang ada di Indonesia</strong></h3>
               <p class="">
-                Berikut ini adalah beberapa contoh bidang dalam UMKM:
+                Berikut ini adalah Festival yang ada di Indonesia:
               </p>
             </div>
 
@@ -251,83 +251,67 @@
 
               <div class="faq-item faq-active">
 
-                <h3><span>01</span> UMKM Bidang Kuliner</h3>
+                <h3><span>01</span> Festival Fim.</h3>
                 <div class="faq-content">
-                  <p>Usaha di bidang kuliner memang tidak ada habisnya,
-                    kita bisa berkreasi dengan berbagai macam ide untuk mengembangkan bisnis tersebut.
-                    Begitu pula dengan UMKM, banyak sekali jenis UMKM dalam bidang kuliner.</p>
+                  <p>Festival film adalah suatu presentasi film yang terorganisasi dan diadakan di satu atau
+                     lebih bioskop atau tempat pemutaran film, biasanya di satu kota atau wilayah saja. Semakin banyak,
+                      festival film menampilkan beberapa film di luar ruangan.</p>
                 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
 
               <div class="faq-item">
-                <h3><span>02</span> UMKM Bidang Kecantikan</h3>
+                <h3><span>02</span> Festival Musik.</h3>
                 <div class="faq-content">
-                  <p>Kosmetik adalah salah satu yang sangat diperlukan,
-                    tidak hanya berkaitan dengan make up.
-                    Namun juga skincare yang sangat dibutuhkan oleh masyarakat.
-                    Saat ini, banyak muncul jenis-jenis kosmetik yang merupakan UMKM.</p>
+                  <p>Festival musik adalah acara komunitas berorientasi kepada penampilan langsung
+                     menyanyi dan instrumen yang biasanya dibeda-bedakan dengan tema seperti jenis musik
+                     , kebangsaan penampil atau lokasi atau waktu tertentu.</p>
                 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
 
               <div class="faq-item">
-                <h3><span>03</span>UMKM Bidang Fashion</h3>
+                <h3><span>03</span> Festival Makanan.</h3>
                 <div class="faq-content">
-                  <p>Bidang fashion juga selalu berkembang mengikuti trend atau zamannya.
-                    Pakaian adalah barang yang sangat dibutuhkan oleh masyarakat,
-                    sehingga bisnis jual beli pakaian selalu ramai.
-                    Oleh karena itu, banyak sekali UMKM yang membuka usaha pakaian rumahan.</p>
+                  <p>Festival makanan adalah sebuah festival yang menampilkan makanan, sering kali hasil bumi,
+                     sebagai tema utamanya. Festival-festival ini telah menjadi sarana menyatukan masyarakat melalui
+                      perayaan panen dan mengucap syukur atas musim tanam yang berlimpah.</p>
                 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
 
               <div class="faq-item">
-                <h3><span>04</span> UMKM Bidang Agribisnis</h3>
+                <h3><span>04</span> Festival Seni.</h3>
                 <div class="faq-content">
-                  <p>Beberapa waktu ini banyak sekali masyarakat yang tertarik dengan bidang agribisnis.
-                    Salah satu contohnya yaitu dengan tanaman hias,
-                    banyak sekali masyarakat yang mulai mencari tanaman hias untuk koleksi. </p>
+                  <p>Festival seni adalah festival yang dapat mencakup berbagai bentuk seni termasuk musik, tari, film,
+                    seni rupa, sastra, puisi dan tidak hanya terfokus pada seni rupa. </p>
                 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
 
               <div class="faq-item">
-                <h3><span>05</span>UMKM Bidang Otomotif</h3>
+                <h3><span>05</span> Festival Budaya.</h3>
                 <div class="faq-content">
-                  <p>Meskipun terlihat sulit, tetapi kini sudah banyak UMKM yang menjajal dunia otomotif.
-                    Tidak selalu mengenai mesin, usaha-usaha yang banyak dirintis UMKM di bidang ini seperti bengkel,
-                    tempat pencucian motor atau mobil, rental mobil atau motor, sampai usaha jual beli barang-barang yang dibutuhkan oleh kendaraan.</p>
+                  <p>Festival budaya adalah acara yang merayakan keberagaman dan tradisi suatu komunitas atau suku.</p>
                 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
-              </div>
-
             </div>
-
-          </div>
-
-          <div class="col-lg-5 order-1 order-lg-2 why-us-img">
-            <img src="{{asset('assets/img/pilihan_naya-removebg-preview.png')}}" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="100">
-          </div>
+            </div>
         </div>
-
-      </div>
-
-    </section><!-- /Why Us Section -->
-
-    <!-- Call To Action Section -->
+        <div class="col-lg-5 order-1 order-lg-2 why-us-img">
+            <img src="{{asset('assets/img/pilihan_naya-removebg-preview.png')}}" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="100">
+        </div>
+        </div>
+    </div>
+    </section>
     <section id="call-to-action" class="call-to-action section">
-
-      <img src="{{asset('assets/img/UmkM-Indonesia.webp')}}" alt="">
-
-
-
-    </section><!-- /Call To Action Section -->
+    <img src="{{asset('assets/img/fff.png')}}" alt="">
+    </section>
 </div>
 <section id="portfolio" class="portfolio section">
     <!-- Section Title -->
     <div class="container section-title" data-aos="fade-up">
-        <h2>Gallery</h2>
+        <h2>Gallery Event</h2>
         <p></p>
     </div><!-- End Section Title -->
 
@@ -335,6 +319,11 @@
         <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
             <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
                 <li data-filter="*" class="filter-active">All</li>
+                <li data-filter="*" class="filter-active">Film</li>
+                <li data-filter="*" class="filter-active">Musik</li>
+                <li data-filter="*" class="filter-active">Makanan</li>
+                <li data-filter="*" class="filter-active">Seni</li>
+                <li data-filter="*" class="filter-active">Budaya</li>
             </ul><!-- End Portfolio Filters -->
 
             <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">

@@ -25,9 +25,10 @@
   <!-- Main CSS File -->
   <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <!-- Isotope CSS -->
+  <link rel="stylesheet" href="path/to/isotope.css">
   
-
-
+  <!-- Isotope JS -->
 
 </head>
 
@@ -100,6 +101,8 @@
     <!-- Main JS File -->
     <script src="{{ asset('assets/js/main.js') }}"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="path/to/isotope.pkgd.min.js"></script>
+    
 
 </body>
 </html>
