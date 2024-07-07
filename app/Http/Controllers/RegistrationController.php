@@ -79,11 +79,13 @@ class RegistrationController extends Controller
         }
         return redirect()->route('regis.regis.index')->with('success', 'Registration deleted successfully.');
     }
-    public function export()
+    public function export($event_id)
     {
-        return Excel::download(new RegistrationsExport, 'approved_registrations.xlsx');
+        $registrations = Registration::where('event_id', $event_id)
+                                     ->where('approved', true)
+                                     ->get();
+        return Excel::download(new RegistrationsExport($registrations), 'registrations.xlsx');
     }
-
     public function import(Request $request)
     {
         $request->validate([

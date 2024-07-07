@@ -62,7 +62,7 @@ Route::group(['prefix' => 'regis','middleware' => ['auth'],'as' => 'regis.'], fu
     Route::get('/registrations/list', [RegistrationController::class, 'list'])->name('regis.list');
     Route::delete('/delete/{id}', [RegistrationController::class, 'delete'])->name('delete');
 
-    Route::get('registrations/export', [RegistrationController::class, 'export'])->name('registrations.export');
+    Route::get('registrations/export/{event_id}', [RegistrationController::class, 'export'])->name('registrations.export');
 Route::post('registrations/import', [RegistrationController::class, 'import'])->name('registrations.import');
 });
 

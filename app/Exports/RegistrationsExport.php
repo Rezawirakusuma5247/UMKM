@@ -8,9 +8,16 @@ use Maatwebsite\Excel\Concerns\WithHeadings;
 
 class RegistrationsExport implements FromCollection, WithHeadings
 {
+    protected $registrations;
+
+    public function __construct($registrations)
+    {
+        $this->registrations = $registrations;
+    }
+
     public function collection()
     {
-        return Registration::where('approved', true)->get();
+        return $this->registrations;
     }
 
     public function headings(): array

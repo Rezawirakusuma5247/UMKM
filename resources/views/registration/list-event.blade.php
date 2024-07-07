@@ -43,10 +43,13 @@
                         @endforeach
                     </tbody>
                 </table>
+
+                <div class="mb-3">
+                    <a href="{{ route('regis.registrations.export', ['event_id' => $eventRegistrations->first()->event->id]) }}" class="btn btn-success">Export to Excel</a>
+                </div>
             @endforeach
 
             <div class="mb-3">
-                <a href="{{ route('regis.registrations.export') }}" class="btn btn-success">Export to Excel</a>
                 <form action="{{ route('regis.registrations.import') }}" method="POST" enctype="multipart/form-data" style="display:inline-block;">
                     @csrf
                     <input type="file" name="file" required>
